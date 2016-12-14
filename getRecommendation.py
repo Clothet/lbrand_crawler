@@ -32,7 +32,7 @@ def spider(rec, num):
                 flag = False
             if flag:
                 tags = soup.select(".tag_name")
-                l['items'] = [i['item'] for i in tags]
+                l['items'] = [i['item'][:-1] for i in tags]
                 l['image'] = soup.find(class_="cboxPhoto")['src']
                 l['category'] = category
                 mylog.info(l)
